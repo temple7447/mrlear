@@ -16,6 +16,7 @@ import CountdownTimer from './CountDown';
 function Home({ targetDate = '2023-04-24' }) {
   const [countdownTime, setCountdownTime] = useState((new Date(targetDate) - new Date()) / 1000);
   const [mute, setMute] = useState(false)
+  const [count, setCount]= useState(0)
   const formatCountdownTime = (timeInSeconds) => {
     const days = Math.floor(timeInSeconds / (24 * 60 * 60));
     const hours = Math.floor((timeInSeconds % (24 * 60 * 60)) / (60 * 60));
@@ -59,10 +60,11 @@ function Home({ targetDate = '2023-04-24' }) {
       <div className='col-md-12'>
           <img src={showcase} alt="Showcase" className='w-100' style={{ height: '70vh', objectFit: 'cover', objectPosition: 'center' }} />
         </div>
-    
+  
       </div>
       { false  &&  <CountdownTimer days={days} hours={hours} minutes={minutes} seconds={seconds} />}
-
+<div className='text-center my-4 fs-1'>{count}</div>
+<button onClick={()=> setCount((pre)=> --pre) } className='bg-danger text-light' >increase</button>
       <CardGroup />
       <div className='row no-gutters'>
         <div className='col-md-6 py-3 px-5 d-flex align-items-center'>
