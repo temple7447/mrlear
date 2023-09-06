@@ -95,10 +95,11 @@ if( data.length > 0 ){
           </div>
         </div>
         <div className='col-md-6'>
-        <CardGroup  setAssign={setAssign}/>
+  
         <FormSubmit mute={mute} />
         </div>
       </div>
+      <CardGroup  setAssign={setAssign}/>
     
 
 
