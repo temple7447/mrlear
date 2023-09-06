@@ -80,23 +80,7 @@ const SubmitAssignment = ({ mute }) => {
     }
     const formData = new FormData();
     formData.append("file", files);
-    axios.post('http://localhost:3000/Submittion', {
-      fullname,
-      matriculation,
-      program,
-      level,
-
-    }, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    })
-      .then((response) => {
-        console.log("it was sent successfully...", response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+   
 
 
     //firebase send of data

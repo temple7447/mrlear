@@ -10,7 +10,7 @@ const CardGroup = () => {
   const formattedDate = currentDate.toLocaleDateString('en-CA');
   useEffect(() => {
     axios
-      .get("http://localhost:3005/AssigmentSchema/home")
+      .get("https://gold-bunny-garb.cyclic.app/AssigmentSchema/home")
       .then((response) => {
         setData(response.data);
         
@@ -44,7 +44,7 @@ const CardGroup = () => {
   if(formattedDate ===  timeA){
     console.log(_id)
     axios
-      .post(`http://localhost:3005/AssigmentSchema/Delete/home`, {
+      .post(`https://gold-bunny-garb.cyclic.app/AssigmentSchema/Delete/home`, {
         _id
       })
       .then((response) => {

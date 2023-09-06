@@ -21,7 +21,7 @@ function AssignmentNotification() {
     console.log(messageA, DepartmentA, programmA, levelA, timeA)
     if (!messageA || !DepartmentA || !programmA || !levelA || !timeA) return alert("please enter all the field")
     else {
-      axios.post('http://localhost:3005/AssigmentSchema', {
+      axios.post('https://gold-bunny-garb.cyclic.app/AssigmentSchema', {
         messageA, DepartmentA, levelA, programmA, timeA
       }).then((res) => {
     
