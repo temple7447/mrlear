@@ -104,12 +104,12 @@ function SideBar() {
 						<span className="text">Assignment Notification</span>
 					</Link>
 				</li>
-				<li>
+				{/* <li>
 					<Link to="/Admin/Dashboard/Analytics">
 						<i className='bx bxs-doughnut-chart' ></i>
 						<span className="text">Analytics</span>
 					</Link>
-				</li>
+				</li> */}
 				<li>
 					<Link to="/Admin/Dashboard/Message">
 						<i className='bx bxs-message-dots' ></i>
@@ -118,12 +118,12 @@ function SideBar() {
 				</li>
 			</ul>
 			<ul className="side-menu">
-				<li>
+				{/* <li>
 					<a href="#">
 						<i className='bx bxs-cog' ></i>
 						<span className="text">Settings</span>
 					</a>
-				</li>
+				</li> */}
 				<li >
 					<a href="#" onClick={HandleLoginOut} className="logout">
 						<i className='bx bxs-log-out-circle' ></i>

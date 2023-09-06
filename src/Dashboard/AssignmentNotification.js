@@ -4,11 +4,11 @@ import { Link, useLocation } from 'react-router-dom'
 import axios from 'axios'
 function AssignmentNotification() {
 
-  const [messageA, setMessageA] = useState('')
+  const [messageA, setMessageA] = useState(' ')
   const [DepartmentA, setDepartmentA] = useState('ELECTRICAL AND ELECTRONIC ENGINEERING')
   const [programmA, setprogrammA] = useState('MORNING')
-  const [levelA, setlevelA] = useState('')
-  const [timeA, settimeA] = useState('')
+  const [levelA, setlevelA] = useState(' ')
+  const [timeA, settimeA] = useState(' ')
 
 
   const location = useLocation();
@@ -21,10 +21,15 @@ function AssignmentNotification() {
     console.log(messageA, DepartmentA, programmA, levelA, timeA)
     if (!messageA || !DepartmentA || !programmA || !levelA || !timeA) return alert("please enter all the field")
     else {
-      axios.post('http://localhost:3000/Admin/Dashboard/Notification', {
+      axios.post('http://localhost:3005/AssigmentSchema', {
         messageA, DepartmentA, levelA, programmA, timeA
       }).then((res) => {
+    
+    setMessageA("")
+        setlevelA(" ")
+        settimeA(" ")
         alert("it was successfully sent")
+
       })
         .catch((error) => {
           console.log(error)
@@ -60,7 +65,7 @@ function AssignmentNotification() {
 
               <div>
                 <label htmlFor="name">Edit ASSIGNMENT</label>
-                <textarea type="text" className="form-control" onChange={(e) => setMessageA(e.target.value)} value={state?.messageA} placeholder="enter your message" name="message"></textarea>
+                <textarea type="text" className="form-control" onChange={(e) => setMessageA(e.target.value)} value={messageA} placeholder="enter your message" name="message"></textarea>
               </div>
               <div>
                 <label htmlFor="department">DEPARTMENT</label>
@@ -74,12 +79,12 @@ function AssignmentNotification() {
               </div>
               <div>
                 <label htmlFor="mat">LEVEL</label>
-                <input className="form-control level" name="level" id="cars" value={state?.levelA} placeholder='Enter the Level' onChange={(e) => setlevelA(e.target.value)} />
+                <input className="form-control level" name="level" id="cars" value={levelA} placeholder='Enter the Level' onChange={(e) => setlevelA(e.target.value)} />
 
               </div>
               <div>
                 <label htmlFor="date">TIME OF SUBMITION</label>
-                <input type="date" name="time" className="form-control " value={state?.timeA} onChange={(e) => settimeA(e.target.value)} />
+                <input type="date" name="time" className="form-control " value={timeA} onChange={(e) => settimeA(e.target.value)} />
               </div>
               <button type="submit" className="form-control btn-primary btn btns  my-4">Click To Submit</button>
             </form>

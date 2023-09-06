@@ -16,8 +16,7 @@ const Footer = () => {
           <div className="col-md-4 mb-3">
             <h5>About Us</h5>
             <p className="text-muted">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Welcome to the official website of Engr. Mr. RASHEED, a distinguished Computer Engineering Lecturer at Auchi Polytechnic. With over 6 years of dedicated experience in the field of computer engineering, Mr. RASHEED has been at the forefront of education and research, shaping the future of aspiring engineers.
             </p>
           </div>
           <div className="col-md-4 mb-3">
@@ -25,11 +24,11 @@ const Footer = () => {
             <ul className="list-unstyled text-muted">
               <li className="mb-2">
                 <FontAwesomeIcon icon={faEnvelope} className="me-2" />
-                example@example.com
+                rousman@auchipoly.edu.ng
               </li>
               <li className="mb-2">
                 <FontAwesomeIcon icon={faPhone} className="me-2" />
-                +1-555-555-5555
+                +2348064029436
               </li>
             </ul>
           </div>
@@ -60,7 +59,7 @@ const Footer = () => {
           <small>
             &copy; 2023 Company Name. All rights reserved. | Designed by{" "}
             <a href="#" className="text-light">
-              Your Name
+             Temple +2347011951761
             </a>
           </small>
         </div>

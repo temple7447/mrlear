@@ -3,6 +3,7 @@ import FormSubmit from './FormSubmit';
 import showcase from '../assets/professor.jpeg';
 import CardGroup from '../SubComponent/CardAssignments';
 // import Receipt from '../Whatsapp';
+import axios from 'axios';
 import CountdownTimer from './CountDown';
 // import DocumentDashboard from '../UserDetails/DocumentDashboard';
 // import DocumentUploadForm from '../UserDetails/UploadDoc';
@@ -16,6 +17,9 @@ import CountdownTimer from './CountDown';
 function Home({ targetDate = '2023-04-24' }) {
   const [countdownTime, setCountdownTime] = useState((new Date(targetDate) - new Date()) / 1000);
   const [mute, setMute] = useState(false)
+  const [assign,setAssign] = useState([])
+  const [data, setData] = useState([]);
+
   const [count, setCount]= useState(0)
   const formatCountdownTime = (timeInSeconds) => {
     const days = Math.floor(timeInSeconds / (24 * 60 * 60));
@@ -41,6 +45,22 @@ function Home({ targetDate = '2023-04-24' }) {
     return () => clearInterval(interval);
   }, []);
 
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3005/AssigmentSchema/home")
+      .then((response) => {
+        setData(response.data);
+        
+        console.log(response.data)
+      });
+if( data.length > 0 ){
+  setMute(false);
+}else{
+  setMute(true);
+}   
+  }, [data]);
+
   useEffect(() => {
     if (days === 0 && seconds === 0 && minutes === 0 && hours === 0) {
       setMute(true);
@@ -64,17 +84,18 @@ function Home({ targetDate = '2023-04-24' }) {
       </div>
       { false  &&  <CountdownTimer days={days} hours={hours} minutes={minutes} seconds={seconds} />}
 
-      <CardGroup />
+     
       <div className='row no-gutters'>
         <div className='col-md-6 py-3 px-5 d-flex align-items-center'>
           <div className='w-100'>
             <h1 className='display-4 mb-4'>NEED'S COMPUTER HELP?</h1>
-            <h2 className='mb-4'>PROF. TEMPLE VOKE</h2>
-            <p className='lead mb-4'>"Hello everyone, my name is Dr. Jane Smith and I am a professor of Psychology here at XYZ University. I earned my PhD in Psychology from ABC University, and have been teaching and researching in this field for over 10 years.</p>
+            <h2 className='mb-4'>Engr. Mr. USMAN ABDUL-RASHEED </h2>
+            <p className='lead mb-4'>"Hello everyone, my name Engr. Mr. RASHEED and I am Lecturer of Computer Engineering here at Auchi Polytechnic. I  have been teaching and researching in this field for over 6 years.</p>
             <button className='btn btn-primary btn-lg'>CONTACT NOW</button>
           </div>
         </div>
         <div className='col-md-6'>
+        <CardGroup  setAssign={setAssign}/>
         <FormSubmit mute={mute} />
         </div>
       </div>

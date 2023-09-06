@@ -127,7 +127,6 @@ const SubmitAssignment = ({ mute }) => {
 
   };
 
-  const percentage = 66;
 
 
   return (
