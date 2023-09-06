@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth'
+import { Link , NavLink} from 'react-router-dom';
+import { getAuth, signOut } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom';
+
 import './style.css'
 function SideBar() {
 	const [isSidebarHidden, setIsSidebarHidden] = useState(window.innerWidth < 768);
@@ -24,15 +25,16 @@ function SideBar() {
 		});
 
 		const menuBar = document.querySelector('.content nav .bx.bx-menu');
-		const sidebar = document.querySelector('.sidebar');
+
 
 		menuBar.addEventListener('click', function () {
 			setIsSidebarHidden(!isSidebarHidden);
 		});
+	
 
 		const searchButton = document.querySelector('.content nav form .form-input button');
 		const searchButtonIcon = document.querySelector('.content nav form .form-input button .bx');
-		const searchForm = document.querySelector('.content nav form');
+	
 
 		searchButton.addEventListener('click', function (e) {
 			if (window.innerWidth < 576) {
@@ -104,12 +106,7 @@ function SideBar() {
 						<span className="text">Assignment Notification</span>
 					</Link>
 				</li>
-				{/* <li>
-					<Link to="/Admin/Dashboard/Analytics">
-						<i className='bx bxs-doughnut-chart' ></i>
-						<span className="text">Analytics</span>
-					</Link>
-				</li> */}
+			
 				<li>
 					<Link to="/Admin/Dashboard/Message">
 						<i className='bx bxs-message-dots' ></i>
@@ -125,10 +122,10 @@ function SideBar() {
 					</a>
 				</li> */}
 				<li >
-					<a href="#" onClick={HandleLoginOut} className="logout">
+					<NavLink  onClick={HandleLoginOut} className="logout">
 						<i className='bx bxs-log-out-circle' ></i>
 						<span className="text">Logout</span>
-					</a>
+					</NavLink>
 				</li>
 			</ul>
 		</section>

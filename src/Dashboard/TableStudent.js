@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import Notication from './Notication'
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
-import { app, database, storage } from "../firebase";
+import {  database} from "../firebase";
+import { NavLink } from 'react-router-dom';
 
 function TableStudent() {
     const collectionRef = collection(database, 'Students')
@@ -34,15 +34,15 @@ function TableStudent() {
         return (
             <tr key={id}>
                 <td>
-                    <img src="img/people.png" />
+                    <img src="img/people.png"  alt='img'/>
                     <p>{fullname}</p>
                 </td>
                 <td>{matriculation}</td>
                 <td><span className="status completed">{program}</span></td>
                 <td><span className="status completed">{level}</span></td>
-                <td><a href={downloadURL} target="_blank" download>
+                <td><NavLink href={downloadURL} target="_blank" download>
                     <button className='text-light'>Download</button>
-                </a></td>
+                </NavLink></td>
                 <td>
                     <button className='bg-danger' onClick={() => handleDelete(id)}>Delete</button>
                 </td>

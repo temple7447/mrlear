@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './style.css'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, NavLink } from 'react-router-dom'
 import axios from 'axios'
 function AssignmentNotification() {
 
@@ -44,7 +44,7 @@ function AssignmentNotification() {
           <h1>Dashboard</h1>
           <ul className="breadcrumb">
             <li>
-              <a href="#">Dashboard</a>
+              <NavLink href="#">Dashboard</NavLink>
             </li>
             <li><i className='bx bx-chevron-right' ></i></li>
             <li>
@@ -52,10 +52,10 @@ function AssignmentNotification() {
             </li>
           </ul>
         </div>
-        <a href="#" className="btn-download">
+        {/* <a href="#" className="btn-download">
           <i className='bx bxs-cloud-download' ></i>
           <span className="text">Download PDF</span>
-        </a>
+        </a> */}
       </div>
 
       <section className="container">

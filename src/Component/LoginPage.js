@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth'
-import { app } from '../firebase'
+import React, { useState} from 'react'
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, } from 'firebase/auth'
+import { app} from '../firebase'
 import { motion } from "framer-motion";
 import { useNavigate } from 'react-router-dom';
 
@@ -79,10 +79,11 @@ const LoginPage = () => {
                   <div className="form-group">
                     <label htmlFor="password">Password</label>
                     <input
-                      type="text"
+                      type="password"
                       className="form-control"
                       placeholder="Enter your password"
                       value={password}
+                    
                       onChange={(e) => setPassword(e.target.value)}
                       required
                     />
