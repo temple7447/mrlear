@@ -6,7 +6,7 @@ function AssignmentNotification() {
 
   const [messageA, setMessageA] = useState(' ')
   const [DepartmentA, setDepartmentA] = useState('ELECTRICAL AND ELECTRONIC ENGINEERING')
-  const [programmA, setprogrammA] = useState('MORNING')
+  const [programmA, setprogrammA] = useState('')
   const [levelA, setlevelA] = useState(' ')
   const [timeA, settimeA] = useState(' ')
 
@@ -74,13 +74,40 @@ function AssignmentNotification() {
 
               <div>
                 <label htmlFor="mat">PROGRAM</label>
-                <input className="form-control morneven" name="morneven" id="cars" value={state?.programmA} onChange={(e) => setprogrammA(e.target.value)} />
+                <select
+                      id="program"
+                      className="form-control morneven"
+                      value={programmA}
+                      onChange={(e) => {
+                        setprogrammA(e.target.value);
+                      }}
+                      required
+                    
+                    >  <option value="">Select your program</option>
+                      <option value="Morning">Morning</option>
+                      <option value="Evening">Evening</option>
 
+                    </select>
               </div>
               <div>
                 <label htmlFor="mat">LEVEL</label>
-                <input className="form-control level" name="level" id="cars" value={levelA} placeholder='Enter the Level' onChange={(e) => setlevelA(e.target.value)} />
+                <select
+                      type="text"
+                      className="form-control"
+                      placeholder="Enter your level"
+                      value={levelA}
+                      onChange={(e) => {
+                        setlevelA(e.target.value) 
+                      }}
+                      required
+                    >
+                    <option value="">Select </option>
+                      <option value="ND1">ND1</option>
+                      <option value="ND2">ND2</option>
+                      <option value="HND1">HND1</option>
+                      <option value="HND2">HND2</option>
 
+                    </select>
               </div>
               <div>
                 <label htmlFor="date">TIME OF SUBMITION</label>
