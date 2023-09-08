@@ -34,7 +34,6 @@ function TableStudent() {
         return (
             <tr key={id}>
                 <td>
-                    <img src="img/people.png"  alt='img'/>
                     <p>{fullname}</p>
                 </td>
                 <td>{matriculation}</td>
