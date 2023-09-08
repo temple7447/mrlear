@@ -33,7 +33,7 @@ function NavigationBar({ Data }) {
       <div className='container'>
         <Link className='navbar-brand' to="/">
           <FaGraduationCap style={{ fontSize: 60, color: '#5950F6' }} />
-          <span className='' style={{ color: '#404040' }}>UNI</span><span className='' style={{ color: '#5950F6' }}>TECH</span>
+          <span className='' style={{ color: '#404040' }}>POLY</span><span className='' style={{ color: '#5950F6' }}>TECH</span>
         </Link>
         <button className="navbar-toggler" type="button" onClick={() => setIsMobileNavVisible(!isMobileNavVisible)}>
           <span className="navbar-toggler-icon"></span>

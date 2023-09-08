@@ -20,7 +20,7 @@ const SubmitAssignment = ({ mute }) => {
   const [files, setFileds] = useState(null)
   const [mutebtn, setMutebtn] = useState(false)
   const [downloadedfile, setDownloadedFile] = useState('')
-  const [counting, setcounting]= useState(0)
+  const [counting, setcounting] = useState(0)
 
   // const collectionRef = collection(database, "StudentFile")
   const storage = getStorage();
@@ -80,7 +80,7 @@ const SubmitAssignment = ({ mute }) => {
     }
     const formData = new FormData();
     formData.append("file", files);
-   
+
 
 
     //firebase send of data
@@ -114,7 +114,7 @@ const SubmitAssignment = ({ mute }) => {
 
 
   return (
-    <div className="container">
+    <div className="container mt-sm-5" >
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -145,7 +145,7 @@ const SubmitAssignment = ({ mute }) => {
                     <input
                       type="text"
                       className="form-control"
-                      placeholder="Enter your matriculation number"
+                      placeholder="Enter your matriculation number eg.ENG/12345678"
                       value={matriculation}
                       onChange={(e) => setMatriculation(e.target.value)}
                       required
@@ -154,27 +154,42 @@ const SubmitAssignment = ({ mute }) => {
                   </div>
                   <div className="form-group">
                     <label htmlFor="program">Program</label>
-                    <input
-                      type="text"
+                    <select
+                      id="program"
                       className="form-control"
-                      placeholder="Enter your program"
                       value={program}
-                      onChange={(e) => setProgram(e.target.value)}
+                      onChange={(e) => {
+                        setProgram(e.target.value);
+                      }}
                       required
                       disabled={mute}
-                    />
+                    >  <option value="">Select your program</option>
+                      <option value="Morning">Morning</option>
+                      <option value="Evening">Evening</option>
+
+                    </select>
                   </div>
                   <div className="form-group">
                     <label htmlFor="level">Level</label>
-                    <input
+                    <select
                       type="text"
                       className="form-control"
                       placeholder="Enter your level"
                       value={level}
-                      onChange={(e) => setLevel(e.target.value)}
+                      onChange={(e) => {
+                        setLevel(e.target.value)
+                        console.log(e.target.value)
+                      }}
                       required
                       disabled={mute}
-                    />
+                    >
+                    <option value="">Select </option>
+                      <option value="ND1">ND1</option>
+                      <option value="ND2">ND2</option>
+                      <option value="HND1">HND1</option>
+                      <option value="HND2">HND2</option>
+
+                    </select>
                   </div>
                   <div className="form-group">
                     <label htmlFor="Document">Document Upload</label>

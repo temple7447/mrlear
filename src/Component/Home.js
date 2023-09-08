@@ -10,10 +10,6 @@ import CountdownTimer from './CountDown';
 // import LoginForm from '../UserDetails/Login';
 // import SignUpForm from '../UserDetails/SignUp';
 
-
-
-
-
 function Home({ targetDate = '2023-04-24' }) {
   const [countdownTime, setCountdownTime] = useState((new Date(targetDate) - new Date()) / 1000);
   const [mute, setMute] = useState(false)
@@ -51,9 +47,9 @@ function Home({ targetDate = '2023-04-24' }) {
       .get("https://gold-bunny-garb.cyclic.app/AssigmentSchema/home")
       .then((response) => {
         setData(response.data);
-        
-        console.log(response.data)
-      });
+      
+      },[]);
+      
 if( data.length > 0 ){
   setMute(false);
 }else{
