@@ -10,7 +10,7 @@ function Notification() {
 
   useEffect(() => {
     axios
-      .get('https://gold-bunny-garb.cyclic.app/AssigmentSchema')
+      .get('https://lecturerbackend.onrender.com/AssigmentSchema')
       .then((response) => {
         console.log(response.data);
         setNotificationData(response.data);
@@ -24,7 +24,7 @@ function Notification() {
     const newNotificationData = notificationData.filter((ele) => ele._id !== _id);
     setNotificationData(newNotificationData);
     axios
-      .post(`https://gold-bunny-garb.cyclic.app/AssigmentSchema/Delete`, {
+      .post(`https://lecturerbackend.onrender.com/AssigmentSchema/Delete`, {
         _id
       })
       .then((response) => {

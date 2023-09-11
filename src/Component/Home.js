@@ -44,7 +44,7 @@ function Home({ targetDate = '2023-04-24' }) {
 
   useEffect(() => {
     axios
-      .get("https://gold-bunny-garb.cyclic.app/AssigmentSchema/home")
+      .get("https://lecturerbackend.onrender.com/AssigmentSchema/home")
       .then((response) => {
         setData(response.data);
       
