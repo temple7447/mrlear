@@ -37,8 +37,8 @@ function TableStudent() {
                     <p>{fullname}</p>
                 </td>
                 <td>{matriculation}</td>
-                <td><span className="status completed">{program}</span></td>
-                <td><span className="status completed">{level}</span></td>
+                <td><span className="">{program}</span></td>
+                <td><span className="">{level}</span></td>
                 <td><NavLink href={downloadURL} target="_blank" download>
                     <button className='text-light'>Download</button>
                 </NavLink></td>
