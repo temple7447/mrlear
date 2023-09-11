@@ -105,7 +105,7 @@ const LoginPage = () => {
                   </motion.div>
                 </form>
               </div>
-              <button onClick={HangleSignUp} className='mx-3 my-2 bg-success'>signup</button>
+              {/* <button onClick={HangleSignUp} className='mx-3 my-2 bg-success'>signup</button> */}
             </div>
 
           </div>
